@@ -1,21 +1,33 @@
 ---
 pipeline:
   fetch:
-    - unit: deploy
+    - unit_test: deploy
     - build
 edges:
-  build: deploy
-steps:
+  - build: deploy
+profiles:
   fetch:
-    script: ./fetch_and_tar_repo.sh
-    output: scm_artifact.tar
+    script: ./scripts/fetch.sh
+    output: 
+      - scm_artifact.tar
   unit_test:
-    input: scm_artifact.tar
-    script: ./run_unit_tests.sh
+    input: 
+      - scm_artifact.tar
+    script: ./scripts/unit_test.sh
   build:
-    input: scm_artifact.tar
-    script: ./build_webpage.sh
-    output: build_artifact.tar
+    input: 
+      - scm_artifact.tar
+    script: ./scripts/build.sh
+    output: 
+      - build_artifact.tar
   deploy:
-    input: build_artifact.tar
-    script: ./deploy_to_docker_hub.sh
+    input: 
+      - build_artifact.tar
+    script: ./scripts/deploy.sh
+    environment:
+      DOCKER_IMAGE: predixci/canary
+      DOCKER_USERNAME: predixci
+      # DOCKER_PASSWORD: set in Predix CI UI
+      # SOLANO_API_KEY:  set in Predix CI UI
+  default:
+    script: dev/null
