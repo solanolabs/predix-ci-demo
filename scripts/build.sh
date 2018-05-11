@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -o errexit -o pipefail # Exit on error
+set -x -o errexit -o pipefail # Exit on error
 
 # Constants
 HEADER_API_KEY_NAME=X-Tddium-Api-Key
