@@ -9,8 +9,10 @@ echo "----------------------------"
 echo "Running Unit Tests"
 echo "----------------------------"
 
-# Running CF Tests
+# Install CF CLI
+./install_cf_cli.sh
 
+# Running CF Tests
 cf target
 cf apps
 
