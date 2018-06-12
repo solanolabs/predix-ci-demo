@@ -2,9 +2,6 @@
 pipeline:
   fetch:
     - unit_test: deploy
-    - build
-edges:
-  - build: deploy
 profiles:
   fetch:
     script: ./scripts/fetch.sh
@@ -14,20 +11,9 @@ profiles:
     input: 
       - scm_artifact.tar
     script: ./scripts/unit_test.sh
-  build:
-    input: 
-      - scm_artifact.tar
-    script: ./scripts/build.sh
-    output: 
-      - build_artifact.tar
   deploy:
     input: 
       - build_artifact.tar
     script: ./scripts/deploy.sh
-    environment:
-      DOCKER_IMAGE: predixci/canary
-      DOCKER_USERNAME: predixci
-      # DOCKER_PASSWORD: set in Predix CI UI
-      # SOLANO_API_KEY:  set in Predix CI UI
   default:
     script: dev/null
