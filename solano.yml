@@ -1,7 +1,6 @@
 ---
 pipeline:
-  fetch:
-    - unit_test: deploy
+  unit_test: deploy
 profiles:
   fetch:
     script: ./scripts/fetch.sh
