@@ -10,7 +10,8 @@ echo "----------------------------"
 chmod +x ./scripts/install_cf_cli.sh
 ./scripts/install_cf_cli.sh
 
-# Running CF Tests
+# Running CF Tests\
+cf login
 cf target
 cf apps
 
