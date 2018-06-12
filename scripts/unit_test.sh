@@ -1,9 +1,6 @@
 #!/bin/bash
 
-cd ~
-
-tar -xvf scm_artifact.tar
-ls -l
+ls -la
 
 echo "----------------------------"
 echo "Running Unit Tests"
