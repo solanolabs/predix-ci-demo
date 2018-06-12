@@ -9,8 +9,10 @@ echo "----------------------------"
 echo "Running Unit Tests"
 echo "----------------------------"
 
-# Do Unit Tests Here
-sleep 30
+# Running CF Tests
+
+cf target
+cf apps
 
 echo "----------------------------"
 echo "Unit Tests Passed"
