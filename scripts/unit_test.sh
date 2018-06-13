@@ -10,9 +10,13 @@ echo "----------------------------"
 chmod +x ./scripts/install_cf_cli.sh
 ./scripts/install_cf_cli.sh
 
-# Running CF Tests\
-cf login
+# Configure CF ENV
+./scripts/configure_cf_cli.rb
+
+# Running CF Tests
 cf target
+cf orgs
+cf spaces
 cf apps
 
 echo "----------------------------"
