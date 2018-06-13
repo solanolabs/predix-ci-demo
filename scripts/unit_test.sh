@@ -2,24 +2,27 @@
 
 export HOME=/root
 
+set –xv
+
 echo "----------------------------"
-echo "Running Unit Tests"
+echo "Install CF CLI"
 echo "----------------------------"
 
-# Install CF CLI
 chmod +x ./scripts/install_cf_cli.sh
 ./scripts/install_cf_cli.sh
 
-# Configure CF ENV
+echo "----------------------------"
+echo "Configure CF ENV"
+echo "----------------------------"
+
 chmod +x ./scripts/configure_cf_cli.rb
 ./scripts/configure_cf_cli.rb
 
-# Running CF Tests
+echo "----------------------------"
+echo "Running CF Tests"
+echo "----------------------------"
+
 cf target
 cf orgs
 cf spaces
 cf apps
-
-echo "----------------------------"
-echo "Unit Tests Passed"
-echo "----------------------------"
