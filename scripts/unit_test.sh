@@ -1,6 +1,10 @@
 #!/bin/bash
 
+pwd
 ls -la
+
+ls -la $HOME
+ls -la ~
 
 echo "----------------------------"
 echo "Running Unit Tests"
