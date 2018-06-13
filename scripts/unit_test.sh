@@ -1,7 +1,6 @@
 #!/bin/bash
 
-cd ~
-pwd
+export HOME=/root
 
 echo "----------------------------"
 echo "Running Unit Tests"
