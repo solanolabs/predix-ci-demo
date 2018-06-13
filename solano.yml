@@ -2,10 +2,6 @@
 pipeline:
   unit_test: deploy
 profiles:
-  fetch:
-    script: ./scripts/fetch.sh
-    output: 
-      - scm_artifact.tar
   unit_test:
     input: 
       - scm_artifact.tar
