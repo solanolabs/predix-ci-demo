@@ -1,9 +1,8 @@
 function install_docker {
-  sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common
+  uname -a
+  lsb_release -cs
+  dig download.docker.com
+  curl https://download.docker.com
 
   # Prepare to install docker
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
