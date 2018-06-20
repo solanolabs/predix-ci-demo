@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x -o errexit -o pipefail # Exit on error
+set -x
 source scripts/functions.sh
 
 export PREDIX_REPO_ROOT=`pwd`
