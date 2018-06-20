@@ -6,7 +6,7 @@ set -x -o errexit -o pipefail # Exit on error
 HEADER_API_KEY_NAME=X-Tddium-Api-Key
 HEADER_CLIENT_NAME=X-Tddium-Client-Version
 HEADER_CLIENT_VALUE=tddium-client_0.4.4
-SOLANO_API_URL=https://nutro-sandbox.slno.net/1
+SOLANO_API_URL=https://ci.predix-ci-staging.gecis.io/1
 
 source scripts/functions.sh
 
