@@ -26,3 +26,7 @@ cf target
 cf orgs
 cf spaces
 cf apps
+
+git clone https://github.com/cloudfoundry-samples/cf-sample-app-nodejs.git 
+cd cf-sample-app-nodejs
+cf push --random-route
