@@ -4,7 +4,7 @@ pipeline:
     - unit_test: deploy
     - BUILD
 edges:
-  - build: deploy
+  - BUILD: deploy
 profiles:
   fetch:
     script: ./scripts/fetch.sh
