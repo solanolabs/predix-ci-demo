@@ -2,7 +2,7 @@
 pipeline:
   fetch:
     - unit_test: deploy
-    - build
+    - BUILD
 edges:
   - build: deploy
 profiles:
@@ -14,7 +14,7 @@ profiles:
     input: 
       - scm_artifact.tar
     script: ./scripts/unit_test.sh
-  build:
+  BUILD:
     input: 
       - scm_artifact.tar
     script: ./scripts/build.sh
